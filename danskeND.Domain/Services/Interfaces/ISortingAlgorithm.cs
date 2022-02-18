@@ -2,7 +2,7 @@ namespace danskeND.Domain.Services.Interfaces;
 
 public interface ISortingAlgorithm
 {
-    List<int> BubbleSorting(List<int> input);
-    List<int> SelectionSorting(List<int> input);
-    List<int> InsertionSorting(List<int> input);
+    List<long> BubbleSorting(List<long> input);
+    List<long> SelectionSorting(List<long> input);
+    List<long> InsertionSorting(List<long> input);
 }

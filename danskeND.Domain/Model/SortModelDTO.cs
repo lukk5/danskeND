@@ -4,7 +4,7 @@ namespace danskeND.Domain.Model;
 
 public class SortModelDTO : BaseModelDTO
 {
-    public IEnumerable<int> Input { get; set; }
-    public IEnumerable<int> SortedOutput { get; set; }
+    public IEnumerable<long> Input { get; set; }
+    public IEnumerable<long> SortedOutput { get; set; }
     public IEnumerable<MeasureResultDTO> Results { get; set; }
 }

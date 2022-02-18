@@ -4,9 +4,9 @@ namespace danskeND.Domain.Services;
 
 public class SortingAlgorithm : ISortingAlgorithm
 {
-    public List<int> BubbleSorting(List<int> input)
+    public List<long> BubbleSorting(List<long> input)
     {
-        var tempVariable = 0;
+        long tempVariable = 0;
         var result = input;
 
         for (var j = 0; j < result.Count; j++)
@@ -23,7 +23,7 @@ public class SortingAlgorithm : ISortingAlgorithm
         return result;
     }
 
-    public List<int> SelectionSorting(List<int> input)
+    public List<long> SelectionSorting(List<long> input)
     {
         var result = input;
 
@@ -41,7 +41,7 @@ public class SortingAlgorithm : ISortingAlgorithm
         return result;
     }
 
-    public List<int> InsertionSorting(List<int> input)
+    public List<long> InsertionSorting(List<long> input)
     {
         var result = input;
 

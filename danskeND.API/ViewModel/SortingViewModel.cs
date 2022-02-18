@@ -5,5 +5,5 @@ namespace danskeND.ViewModel;
 public class SortingViewModel
 {
     [Required]
-    public List<int> Input { get; set; }
+    public List<long> Input { get; set; }
 }

@@ -4,7 +4,7 @@ namespace danskeND.Repository.Entity;
 
 public class SortEntity : AuditableEntity
 {
-    public IEnumerable<int> Input { get; set; }
-    public IEnumerable<int> SortedOutput { get; set; }
+    public IEnumerable<long> Input { get; set; }
+    public IEnumerable<long> SortedOutput { get; set; }
     public IEnumerable<MeasureResultEntity> MeasureResults { get; set; }
 }
