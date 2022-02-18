@@ -1,0 +1,15 @@
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\bin\Debug\net6.0\danskeND.Domain.deps.json
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\bin\Debug\net6.0\danskeND.Domain.dll
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\bin\Debug\net6.0\ref\danskeND.Domain.dll
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\bin\Debug\net6.0\danskeND.Domain.pdb
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\bin\Debug\net6.0\danskeND.Repository.dll
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\bin\Debug\net6.0\danskeND.Repository.pdb
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\obj\Debug\net6.0\danskeND.Domain.csproj.AssemblyReference.cache
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\obj\Debug\net6.0\danskeND.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\obj\Debug\net6.0\danskeND.Domain.AssemblyInfoInputs.cache
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\obj\Debug\net6.0\danskeND.Domain.AssemblyInfo.cs
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\obj\Debug\net6.0\danskeND.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\obj\Debug\net6.0\danskeND.Domain.csproj.CopyComplete
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\obj\Debug\net6.0\danskeND.Domain.dll
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\obj\Debug\net6.0\ref\danskeND.Domain.dll
+C:\Users\lukas\RiderProjects\danskeND\danskeND.Domain\obj\Debug\net6.0\danskeND.Domain.pdb

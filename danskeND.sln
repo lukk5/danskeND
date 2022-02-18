@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "danskeND.API", "danskeND.API\danskeND.API.csproj", "{65EA7729-D28B-4D65-B0DE-A7ECF166E998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "danskeND.Domain", "danskeND.Domain\danskeND.Domain.csproj", "{5242A1F5-3861-4EF6-968D-69B302E60788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "danskeND.Repository", "danskeND.Repository\danskeND.Repository.csproj", "{90DA2D53-7F21-4CAA-8A56-099F9FFE9B07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65EA7729-D28B-4D65-B0DE-A7ECF166E998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65EA7729-D28B-4D65-B0DE-A7ECF166E998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65EA7729-D28B-4D65-B0DE-A7ECF166E998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65EA7729-D28B-4D65-B0DE-A7ECF166E998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5242A1F5-3861-4EF6-968D-69B302E60788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5242A1F5-3861-4EF6-968D-69B302E60788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5242A1F5-3861-4EF6-968D-69B302E60788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5242A1F5-3861-4EF6-968D-69B302E60788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90DA2D53-7F21-4CAA-8A56-099F9FFE9B07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90DA2D53-7F21-4CAA-8A56-099F9FFE9B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90DA2D53-7F21-4CAA-8A56-099F9FFE9B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90DA2D53-7F21-4CAA-8A56-099F9FFE9B07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
