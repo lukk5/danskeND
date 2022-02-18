@@ -29,7 +29,7 @@ public class SortController : ControllerBase
 
         if (result.Success)
             return new OkObjectResult(result);
-
+        
         return new BadRequestObjectResult(result);
     }
 

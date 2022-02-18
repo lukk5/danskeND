@@ -1,6 +1,6 @@
 namespace danskeND.Repository.Enum;
 
-public enum SortingAlgorithm
+public enum SortingAlgorithmType
 {
     Bubble,
     Selection,

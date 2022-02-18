@@ -6,6 +6,6 @@ namespace danskeND.Repository.Entity;
 
 public class MeasureResultEntity : AuditableEntity
 {
-    public SortingAlgorithm Algorithm { get; set; }
+    public SortingAlgorithmType AlgorithmType { get; set; }
     public TimeSpan Time { get; set; }
 }

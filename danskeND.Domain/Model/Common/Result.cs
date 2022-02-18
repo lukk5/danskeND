@@ -2,10 +2,9 @@ namespace danskeND.Domain.Model.Common;
 
 public class Result<T> where T : class
 {
-    private IEnumerable<T>? ResultModel;
-    private Exception Exception;
-    private string Message;
-    
+    public IEnumerable<T>? ResultModel { get; }
+    public Exception Exception { get; }
+    public string Message { get; }
     public bool Success { get; }
     
     public Result(IEnumerable<T>? resultModel, bool success, Exception exception = null, string message = null)

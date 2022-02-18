@@ -13,10 +13,11 @@ namespace danskeND.Services;
 
 public static class ServiceExtensions
 {
-    public static void AddIoCServices(this IServiceCollection serviceCollection)
+    public static void AddApplicationServices(this IServiceCollection serviceCollection)
     {
         serviceCollection.AddScoped<ISortingService,SortingService>();
         serviceCollection.AddScoped(typeof(IFileService<>),typeof(FileService<>));
+        serviceCollection.AddScoped<ISortingAlgorithm, SortingAlgorithm>();
     }
 
     public static void AddRepoServices(this IServiceCollection serviceCollection)

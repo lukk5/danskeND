@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "danskeND.Domain", "danskeND
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "danskeND.Repository", "danskeND.Repository\danskeND.Repository.csproj", "{90DA2D53-7F21-4CAA-8A56-099F9FFE9B07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "danskeND.Test", "danskeND.Test\danskeND.Test.csproj", "{9292BB6B-6592-4101-9133-B0491220A589}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{90DA2D53-7F21-4CAA-8A56-099F9FFE9B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90DA2D53-7F21-4CAA-8A56-099F9FFE9B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90DA2D53-7F21-4CAA-8A56-099F9FFE9B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9292BB6B-6592-4101-9133-B0491220A589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9292BB6B-6592-4101-9133-B0491220A589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9292BB6B-6592-4101-9133-B0491220A589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9292BB6B-6592-4101-9133-B0491220A589}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

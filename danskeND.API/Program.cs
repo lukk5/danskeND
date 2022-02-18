@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper();
 // builder.Services.AddSql(config);
 // builder.Services.AddRepoServices();
-builder.Services.AddIoCServices();
+builder.Services.AddApplicationServices();
 
 
 builder.Services.AddMemoryCache();

@@ -17,6 +17,7 @@ public class SortingService : ISortingService
     private readonly BaseRepository<SortEntity> _baseRepository;
     private readonly IFileService<SortEntity> _fileService;
     private readonly IMapper _mapper;
+    private readonly ISortingAlgorithm _sortingAlgorithm;
 
     /*public SortingService(IBaseRepository baseRepository, IMapper mapper) // jei naudociau db
     {
@@ -25,10 +26,11 @@ public class SortingService : ISortingService
     }*/
 
 
-    public SortingService(IFileService<SortEntity> fileService, IMapper mapper)
+    public SortingService(IFileService<SortEntity> fileService, IMapper mapper, ISortingAlgorithm sortingAlgorithm)
     {
         _mapper = mapper;
         _fileService = fileService;
+        _sortingAlgorithm = sortingAlgorithm;
     }
 
     public async Task<Result<SortModelDTO>> SortCollectionAsync(SortModelDTO input)
@@ -38,9 +40,7 @@ public class SortingService : ISortingService
                 "Input is empty.", new ArgumentNullException(),
                 HttpStatusCode.BadRequest));
 
-        var sortedList = input.Input.ToList();
-
-        BubbleSorting(sortedList);
+        var sortedList = _sortingAlgorithm.BubbleSorting(input.Input.ToList());
 
         var sortedEntity = _mapper.Map<SortEntity>(input);
 
@@ -131,21 +131,21 @@ public class SortingService : ISortingService
         var testSubjectThree = input.Input.ToList();
 
         stopWatch.Start();
-        BubbleSorting(testSubjectOne);
+        _sortingAlgorithm.BubbleSorting(testSubjectOne);
         stopWatch.Stop();
 
         var firstTime = stopWatch.Elapsed;
         stopWatch.Reset();
 
         stopWatch.Start();
-        SelectionSorting(testSubjectTwo);
+        _sortingAlgorithm.SelectionSorting(testSubjectTwo);
         stopWatch.Stop();
 
         var secondTime = stopWatch.Elapsed;
         stopWatch.Reset();
 
         stopWatch.Start();
-        InsertionSort(testSubjectThree);
+        _sortingAlgorithm.InsertionSorting(testSubjectThree);
         stopWatch.Stop();
 
         var thirdTime = stopWatch.Elapsed;
@@ -155,68 +155,22 @@ public class SortingService : ISortingService
         {
             new()
             {
-                Algorithm = SortingAlgorithm.Bubble,
+                AlgorithmType = SortingAlgorithmType.Bubble,
                 Time = firstTime,
                 Id = Guid.NewGuid()
             },
             new()
             {
-                Algorithm = SortingAlgorithm.Selection,
+                AlgorithmType = SortingAlgorithmType.Selection,
                 Time = secondTime,
                 Id = Guid.NewGuid()
             },
             new()
             {
-                Algorithm = SortingAlgorithm.Insertion,
+                AlgorithmType = SortingAlgorithmType.Insertion,
                 Time = thirdTime,
                 Id = Guid.NewGuid()
             },
         };
-    }
-
-
-    private void BubbleSorting(List<int> input)
-    {
-        var tempVariable = 0;
-        for (var j = 0; j < input.Count; j++)
-        {
-            for (var i = 0; i < input.Count - 1; i++)
-            {
-                if (input[i] <= input[i + 1]) continue;
-                tempVariable = input[i + 1];
-                input[i + 1] = input[i];
-                input[i] = tempVariable;
-            }
-        }
-    }
-
-    private void SelectionSorting(List<int> input)
-    {
-        for (var i = 0; i < input.Count; i++)
-        {
-            var min = i;
-            for (var j = i + 1; j < input.Count; j++)
-                if (input[min] > input[j])
-                    min = j;
-
-            if (min == i) continue;
-            (input[min], input[i]) = (input[i], input[min]);
-        }
-    }
-
-    private void InsertionSort(List<int> input)
-    {
-        for (var i = 0; i < input.Count; i++)
-        {
-            var item = input[i];
-            var currentIndex = i;
-
-            while (currentIndex > 0 && input[currentIndex - 1] > item)
-            {
-                input[currentIndex] = input[currentIndex - 1];
-                currentIndex--;
-            }
-            input[currentIndex] = item;
-        }
     }
 }
