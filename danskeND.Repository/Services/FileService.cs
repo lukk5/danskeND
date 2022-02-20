@@ -1,11 +1,18 @@
 using danskeND.Repository.Services.Interfaces;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace danskeND.Repository.Services;
 
 public class FileService<T> : IFileService<T> where T : class
 {
-    private static readonly string filePath = Directory.GetCurrentDirectory() + "/data/data.json"; 
+    private static readonly string filePath = Directory.GetCurrentDirectory() + "/data/data.json";
+    private readonly ILogger _logger;
+    
+    public FileService(ILogger<FileService<T>> logger)
+    {
+        _logger = logger;
+    }
 
     public async Task<IEnumerable<T>?> ReadJsonFromFileAsync()
     {
@@ -23,9 +30,11 @@ public class FileService<T> : IFileService<T> where T : class
         {
             existingData = await ReadJsonFromFileAsync();
         }
-        catch (Exception e) 
+        catch (Exception e)
         {
-            // Ignore this. 
+            _logger.LogError(e.Message);
+            _logger.LogInformation("File is empty");
+            // Ignore this, because it means that file is empty. 
         }
 
         if (existingData is not null)

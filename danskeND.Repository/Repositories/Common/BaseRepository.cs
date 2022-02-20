@@ -20,7 +20,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         var entity = await _dbContext.Set<T>().FindAsync(id);
 
-        if (entity == null)
+        if (entity is null)
             throw new ArgumentNullException();
         
         _dbContext.Set<T>().Remove(entity);

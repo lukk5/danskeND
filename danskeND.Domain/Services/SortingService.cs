@@ -40,7 +40,7 @@ public class SortingService : ISortingService
     {
         if (!input.Input.Any())
             return new Result<SortModelDTO>(new List<SortModelDTO>() { input }, false, new HttpRequestException(
-                "Input is empty.", new ArgumentNullException(),
+                "Input is empty.", new ArgumentNullException(), // dazniausiai pasidarau savo custom exceptionus tokiem atvejam ir grazinu kartu su api status kodais. 
                 HttpStatusCode.BadRequest));
 
         var sortedList = _sortingAlgorithm.BubbleSorting(input.Input.ToList());
@@ -94,7 +94,7 @@ public class SortingService : ISortingService
     private void SetupEntityForFile(AuditableEntity entity)
     {
         entity.CreatedAt = DateTime.Now;
-        entity.CreatedBy = "system";
+        entity.CreatedBy = "system"; // galima buti is auth pasiimti prilogina user.
         entity.LastUpdatedAt = DateTime.Now;
         entity.LastUpdatedBy = "system";
     }
@@ -113,7 +113,7 @@ public class SortingService : ISortingService
         }
     }
 
-    private async Task<SortEntity?> WriteDataToDb(SortEntity input)
+    private async Task<SortEntity?> WriteDataToDb(SortEntity input) // jei naudotumem  db
     {
         var newEntityId = new Guid();
         input.Id = newEntityId;
