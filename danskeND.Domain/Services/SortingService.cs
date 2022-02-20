@@ -9,6 +9,7 @@ using danskeND.Repository.Entity.Common;
 using danskeND.Repository.Enum;
 using danskeND.Repository.Repositories.Common;
 using danskeND.Repository.Services.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace danskeND.Domain.Services;
 
@@ -18,6 +19,7 @@ public class SortingService : ISortingService
     private readonly IFileService<SortEntity> _fileService;
     private readonly IMapper _mapper;
     private readonly ISortingAlgorithm _sortingAlgorithm;
+    private readonly ILogger _logger;
 
     /*public SortingService(IBaseRepository baseRepository, IMapper mapper) // jei naudociau db
     {
@@ -26,11 +28,12 @@ public class SortingService : ISortingService
     }*/
 
 
-    public SortingService(IFileService<SortEntity> fileService, IMapper mapper, ISortingAlgorithm sortingAlgorithm)
+    public SortingService(IFileService<SortEntity> fileService, IMapper mapper, ISortingAlgorithm sortingAlgorithm, ILogger<SortingService> logger)
     {
         _mapper = mapper;
         _fileService = fileService;
         _sortingAlgorithm = sortingAlgorithm;
+        _logger = logger;
     }
 
     public async Task<Result<SortModelDTO>> SortCollectionAsync(SortModelDTO input)
@@ -55,12 +58,13 @@ public class SortingService : ISortingService
                 { _mapper.Map<SortModelDTO>(createdEntity) }, true); // listas del universalumo*/
 
             await WriteDataToFile(sortedEntity);
-
+            
             return new Result<SortModelDTO>(new List<SortModelDTO>
                 { _mapper.Map<SortModelDTO>(sortedEntity) }, true);
         }
         catch (Exception e)
         {
+            _logger.LogError(e.Message);
             return new Result<SortModelDTO>(new List<SortModelDTO>
                 { _mapper.Map<SortModelDTO>(sortedEntity) }, false, e);
         }
@@ -82,6 +86,7 @@ public class SortingService : ISortingService
         }
         catch (Exception e)
         {
+            _logger.LogError(e.Message);
             return new Result<SortModelDTO>(null, false, e);
         }
     }
@@ -103,6 +108,7 @@ public class SortingService : ISortingService
         }
         catch (Exception e)
         {
+            _logger.LogError(e.Message);
             return new Result<SortModelDTO>(null, false, e);
         }
     }

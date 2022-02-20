@@ -6,5 +6,5 @@ public class SortModelDTO : BaseModelDTO
 {
     public IEnumerable<long> Input { get; set; }
     public IEnumerable<long> SortedOutput { get; set; }
-    public IEnumerable<MeasureResultDTO> Results { get; set; }
+    public IEnumerable<MeasureResultDTO> MeasureResults { get; set; }
 }
